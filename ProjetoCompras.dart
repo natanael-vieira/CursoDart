@@ -14,6 +14,7 @@ main() {
       print("\n");
     } else {
       products.add(text!);
+      print("\x1B[2J\x1B[0;0H"); //Comando para fazer a limpeza da tela;
     }
   }
 }
