@@ -2,23 +2,36 @@ import 'dart:io';
 
 Map<String, dynamic> cadastro = {};
 main() {
+  bool condicao = true;
+
+  while (condicao) {
+    print("===== DIGITE UM COMANDO =====");
+    var comando = stdin.readLineSync();
+    if (comando == "sair") {
+      print("===== PROGRAMA FINALIZADO =====");
+      condicao = false;
+    } else if (comando == "cadastro") {
+      cadastrar();
+    } else if (comando == "imprimir") {
+      print(cadastro);
+    } else {
+      print("===== ESSE COMANDO NÃO EXISTE =====");
+    }
+  }
+}
+
+cadastrar() {
   print("===== DIGITE SEU NOME =====");
-  var nome = stdin.readLineSync();
-  cadastro["nome"] = nome;
+  cadastro["nome"] = stdin.readLineSync();
 
   print("===== DIGITE SUA IDADE =====");
-  var idade = stdin.readLineSync();
-  cadastro["idade"] = idade;
+  cadastro["idade"] = stdin.readLineSync();
 
   print("===== DIGITE SUA CIDADE =====");
-  var cidade = stdin.readLineSync();
-  cadastro["cidade"] = cidade;
+  cadastro["cidade"] = stdin.readLineSync();
 
   print("===== DIGITE SEU ESTADO =====");
-  var estado = stdin.readLineSync();
-  cadastro["estado"] = estado;
-
-  print(cadastro);
+  cadastro["estado"] = stdin.readLineSync();
 }
 
 /*main() {
