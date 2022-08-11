@@ -4,6 +4,7 @@ List<Map<String, dynamic>> cadastros = [];
 
 main() {
   bool condicao = true;
+  print("\x1B[2J\x1B[0;0H");
 
   while (condicao) {
     print("===== DIGITE UM COMANDO =====");
@@ -12,6 +13,7 @@ main() {
       print("===== PROGRAMA FINALIZADO =====");
       condicao = false;
     } else if (comando == "cadastro") {
+      print("\x1B[2J\x1B[0;0H");
       cadastrar();
     } else if (comando == "imprimir") {
       print(cadastros);
